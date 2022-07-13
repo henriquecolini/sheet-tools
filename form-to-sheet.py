@@ -4,7 +4,7 @@ import pandas as pd
 from core.utils import read_sheet, write_sheet
 
 def read_col (path: str, col_name: str, engine: str = None):
-	sheet = read_sheet(path, engine)
+	sheet = read_sheet(path, engine, str)
 	if col_name not in sheet:
 		raise Exception("Sheet does not contain the '" + col_name + "' column")
 	return sheet[col_name]
